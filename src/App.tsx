@@ -9,6 +9,7 @@ import { CostEstimator } from "./components/CostEstimator";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/sonner";
+import { AccessibilityToolbar } from "./components/AccessibilityToolbar"; // импортируем
 
 export default function App() {
   const contactRef = useRef<HTMLDivElement>(null);
@@ -53,6 +54,9 @@ export default function App() {
       <Footer />
       
       <Toaster />
+
+      {/* Панель доступности */}
+      <AccessibilityToolbar />
     </div>
   );
 }

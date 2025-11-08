@@ -9,3 +9,4 @@
 
   Run `npm run dev` to start the development server.
   
+  run for openai -  node server/api/translate.ts  
