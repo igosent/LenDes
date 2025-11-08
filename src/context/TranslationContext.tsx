@@ -22,3 +22,5 @@ export const useTranslation = () => {
   if (!context) throw new Error("useTranslation must be used within TranslationProvider");
   return context;
 };
+
+{}
