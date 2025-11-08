@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { Dialog, DialogContent } from "./ui/dialog";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
