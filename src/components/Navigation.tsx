@@ -76,7 +76,7 @@ export function Navigation({ onOrderClick, onAccessibilityClick }: NavigationPro
           <Button onClick={onOrderClick} size="lg" className="bg-gray-900 text-white">Zamów projekt</Button>
 
           {onAccessibilityClick && (
-            <Button onClick={onAccessibilityClick} size="lg" className="bg-yellow-500 text-black">Accessibility</Button>
+            <Button onClick={onAccessibilityClick} size="lg" className="bg-yellow-500 text-black">Ustawienia i pomoc</Button>
           )}
         </motion.div>
       )}
