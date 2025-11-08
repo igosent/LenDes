@@ -1,4 +1,3 @@
-// api/translate.ts
 import OpenAI from "openai";
 
 const openai = new OpenAI({
@@ -6,24 +5,16 @@ const openai = new OpenAI({
 });
 
 export default async function handler(req: any, res: any) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   const { text, targetLanguage } = req.body;
-
-  if (!text || !targetLanguage) {
-    return res.status(400).json({ error: "Text and targetLanguage are required" });
-  }
+  if (!text || !targetLanguage) return res.status(400).json({ error: "Text and targetLanguage are required" });
 
   try {
     const response = await openai.chat.completions.create({
       model: "gpt-4",
       messages: [
-        {
-          role: "system",
-          content: `Przetłumacz poniższy tekst na język ${targetLanguage} prostym i zrozumiałym językiem.`,
-        },
+        { role: "system", content: `Przetłumacz poniższy tekst na język ${targetLanguage} prostym i zrozumiałym językiem.` },
         { role: "user", content: text },
       ],
     });
