@@ -50,7 +50,7 @@ export function Navigation({ onOrderClick, onAccessibilityClick }: NavigationPro
                 onClick={onAccessibilityClick}
                 className="bg-yellow-500 text-black hover:bg-yellow-400"
               >
-                Accessibility
+                Ustawienia
               </Button>
             )}
           </div>

@@ -45,7 +45,7 @@ export function AccessibilityToolbar({ onClose }: Props) {
       <button onClick={() => setFontSize(fontSize + 2)} className="px-2 py-1 bg-gray-300 rounded">A+</button>
       <button onClick={() => setFontSize(fontSize - 2)} className="px-2 py-1 bg-gray-300 rounded">A-</button>
       <button onClick={() => speakText(document.body.innerText)} className="px-2 py-1 bg-blue-600 text-white rounded">Czytaj na głos</button>
-      {onClose && <button onClick={onClose} className="px-2 py-1 bg-red-600 text-white rounded">Close</button>}
+      {onClose && <button onClick={onClose} className="px-2 py-1 bg-red-600 text-white rounded">zamknij</button>}
     </div>
   );
 }
