@@ -15,17 +15,20 @@ import { AccessibilityToolbar } from "./components/AccessibilityToolbar";
 export default function App() {
   const contactRef = useRef<HTMLDivElement>(null);
   const calculatorRef = useRef<HTMLDivElement>(null);
-
   const [showAccessibility, setShowAccessibility] = useState(false);
 
-  const scrollToContact = () => contactRef.current?.scrollIntoView({ behavior: "smooth" });
-  const scrollToCalculator = () => calculatorRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToContact = () =>
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToCalculator = () =>
+    calculatorRef.current?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <TranslationProvider>
       <Navigation
         onOrderClick={scrollToContact}
-        onAccessibilityClick={() => setShowAccessibility(!showAccessibility)}
+        onAccessibilityClick={() =>
+          setShowAccessibility((prev) => !prev)
+        }
       />
 
       <Hero onOrderClick={scrollToContact} onCalculateClick={scrollToCalculator} />
@@ -38,7 +41,10 @@ export default function App() {
       <div id="contact" ref={contactRef}><Contact /></div>
       <Footer />
       <Toaster />
-      {showAccessibility && <AccessibilityToolbar onClose={() => setShowAccessibility(false)} />}
+
+      {showAccessibility && (
+        <AccessibilityToolbar onClose={() => setShowAccessibility(false)} />
+      )}
     </TranslationProvider>
   );
 }

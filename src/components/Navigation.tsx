@@ -30,16 +30,13 @@ export function Navigation({ onOrderClick, onAccessibilityClick }: NavigationPro
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg py-4" : "bg-transparent py-6"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg py-4" : "bg-transparent py-6"}`}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           <div className={`transition-colors duration-300 ${isScrolled ? "text-gray-900" : "text-white"}`}>
             <span className="text-2xl tracking-tight">LenDes</span>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-4">
             <button onClick={() => scrollToSection("services")} className={`transition-colors hover:opacity-70 ${isScrolled ? "text-gray-900" : "text-white"}`}>Usługi</button>
             <button onClick={() => scrollToSection("portfolio")} className={`transition-colors hover:opacity-70 ${isScrolled ? "text-gray-900" : "text-white"}`}>Portfolio</button>
@@ -49,20 +46,21 @@ export function Navigation({ onOrderClick, onAccessibilityClick }: NavigationPro
             <Button onClick={onOrderClick} className={`${isScrolled ? "bg-gray-900 text-white hover:bg-gray-800" : "bg-white text-gray-900 hover:bg-gray-100"}`}>Zamów projekt</Button>
 
             {onAccessibilityClick && (
-              <Button onClick={onAccessibilityClick} className="bg-yellow-500 text-black hover:bg-yellow-400">
-                Accessibility
+              <Button
+                onClick={onAccessibilityClick}
+                className="bg-yellow-500 text-black hover:bg-yellow-400"
+              >
+                Ustawienia
               </Button>
             )}
           </div>
 
-          {/* Mobile Menu Button */}
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className={`md:hidden ${isScrolled ? "text-gray-900" : "text-white"}`}>
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -78,7 +76,7 @@ export function Navigation({ onOrderClick, onAccessibilityClick }: NavigationPro
           <Button onClick={onOrderClick} size="lg" className="bg-gray-900 text-white">Zamów projekt</Button>
 
           {onAccessibilityClick && (
-            <Button onClick={onAccessibilityClick} size="lg" className="bg-yellow-500 text-black">Accessibility</Button>
+            <Button onClick={onAccessibilityClick} size="lg" className="bg-yellow-500 text-black">Ustawienia i pomoc</Button>
           )}
         </motion.div>
       )}
