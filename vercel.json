@@ -7,5 +7,5 @@
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
   ],
-  "outputDirectory": "dist"
+  "outputDirectory": "build"
 }
