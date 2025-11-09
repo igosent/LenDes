@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  base: './', // важно для продакшн, чтобы CSS/JS грузились корректно
+  base: '/',
   plugins: [react()],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
