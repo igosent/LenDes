@@ -7,7 +7,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  base: '/',
   plugins: [react()],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -56,7 +55,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     outDir: 'build',
-    emptyOutDir: true, // очищаем папку перед билдом
+    emptyOutDir: true, 
   },
   server: {
     port: 3000,
